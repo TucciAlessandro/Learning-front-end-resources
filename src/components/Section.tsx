@@ -6,8 +6,7 @@ const StyledSection = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-top: 5rem;
+  padding-top: 0;
 `;
 
 interface Props {

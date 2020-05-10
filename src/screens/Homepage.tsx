@@ -36,9 +36,7 @@ function Homepage() {
   return (
     <Section>
       <Navbar>
-        <Row>
-          <Input value={search} handleChange={handleChange} />
-        </Row>
+        <Input value={search} handleChange={handleChange} />
       </Navbar>
       <Col>
         {filteredResources.map((resource) => (

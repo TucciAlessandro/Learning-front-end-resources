@@ -6,8 +6,8 @@ const StyledNavbar = styled.nav`
   height: 5%;
   background-color: #2c3e50;
   display: flex;
-  padding: 0;
   align-items: center;
+  justify-content: flex-end;
 `;
 const Hr = styled.hr`
   width: 100%;
@@ -15,6 +15,12 @@ const Hr = styled.hr`
   height: 0;
   margin: 0;
   border-top: 2px solid #fafafa;
+`;
+const Row = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
 `;
 
 const StyledLogo = styled.h1`
@@ -31,8 +37,10 @@ function Navbar({ children }: Props) {
   return (
     <>
       <StyledNavbar>
-        <StyledLogo>UTILITIESPICKER</StyledLogo>
-        {children}
+        <Row>
+          <StyledLogo>UTILITIESPICKER</StyledLogo>
+          {children}
+        </Row>
       </StyledNavbar>
       <Hr />
     </>

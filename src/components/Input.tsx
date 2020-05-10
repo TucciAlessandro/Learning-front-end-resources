@@ -36,7 +36,7 @@ const InputContainer = styled.div`
 
 const SearchIcon = styled(FontAwesomeIcon)`
   color: #fafafa;
-  margin: 0.3rem 0.2rem 0.1rem 0.2rem;
+  margin: 0.1rem 0.2rem 0.1rem 0.2rem;
   /* border-bottom: 2px solid #fafafa; */
 `;
 
