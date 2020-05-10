@@ -4,7 +4,7 @@ import Homepage from "./screens/Homepage";
 import Resource from "./components/DisplayResource";
 
 import styled from "styled-components";
-import Navbar from "./components/Navbar";
+
 
 const AppContainer = styled.div`
   height: 100vh;
@@ -28,12 +28,10 @@ function App() {
   return (
     <BrowserRouter>
       <AppContainer>
-        <Navbar>
           <Switch>
             <Route exact path="/" component={Homepage} />
             <Route exact path="/resource/:id" component={Resource} />
           </Switch>
-        </Navbar>
       </AppContainer>
     </BrowserRouter>
   );

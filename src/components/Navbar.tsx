@@ -6,6 +6,7 @@ const StyledNavbar = styled.nav`
   height: 5%;
   background-color: #2c3e50;
   display: flex;
+  padding: 0;
   align-items: center;
 `;
 const Hr = styled.hr`
