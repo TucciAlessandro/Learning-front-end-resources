@@ -44,6 +44,7 @@ const Paragraph = styled.p`
 
 const Header = styled.h1`
   font-family: "Manrope", sans-serif;
+  letter-spacing: 2px;
   margin-block-end: 0;
   margin-block-start: 0;
   color: white;
