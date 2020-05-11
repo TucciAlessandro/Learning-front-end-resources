@@ -2,6 +2,7 @@ import React from "react";
 import { Resource } from "../Data/Seeddata";
 import styled from "styled-components";
 import { useHistory, Link } from "react-router-dom";
+import FadeIn from "./FadeIn";
 
 const StyledResource = styled.div`
   display: flex;
@@ -90,10 +91,11 @@ function DisplayResource({ resource }: Props) {
     history.push(`/resource/${resource.id}`);
     // console.log(name, resourceUrl, description, id);
   };
-  console.log(resource.resourceUrl);
   return (
     <StyledResource>
-      <Header>{resource.name}</Header>
+      <FadeIn direction="right" duration={8000} delay={1} distance={200}>
+        <Header>{resource.name}</Header>
+      </FadeIn>
       <Hr />
       <Row>
         <ModifiedLink to={`/resource/${resource.id}`}>
