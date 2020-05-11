@@ -77,27 +77,26 @@ interface Props {
   resource: Resource;
 }
 
-function DisplayResource({
-  resource: { name, resourceUrl, description, id },
-}: Props) {
+function DisplayResource({ resource }: Props) {
   let history = useHistory();
 
   const handleClick = () => {
-    // history.push(`/resource/${id}`);
-    console.log(name, resourceUrl, description, id);
+    console.log(resource);
+    history.push(`/resource/${resource.id}`);
+    // console.log(name, resourceUrl, description, id);
   };
-  console.log(resourceUrl);
+  console.log(resource.resourceUrl);
   return (
     <StyledResource>
-      <Header>{name}</Header>
+      <Header>{resource.name}</Header>
       <Hr />
       <Row>
         <Iframe
-          src={resourceUrl}
+          src={resource.resourceUrl}
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen={true}
         ></Iframe>
-        <Paragraph>{description}</Paragraph>
+        <Paragraph>{resource.description}</Paragraph>
       </Row>
       <ButtonRow>
         <Button>Do you like me?</Button>

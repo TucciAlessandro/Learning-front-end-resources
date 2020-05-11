@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const StyledNavbar = styled.nav`
   width: 100%;
@@ -38,7 +39,9 @@ function Navbar({ children }: Props) {
     <>
       <StyledNavbar>
         <Row>
-          <StyledLogo>UTILITIESPICKER</StyledLogo>
+          <Link to="/">
+            <StyledLogo>UTILITIESPICKER</StyledLogo>
+          </Link>
           {children}
         </Row>
       </StyledNavbar>
