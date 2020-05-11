@@ -17,10 +17,11 @@ const Col = styled.div`
 function Homepage() {
   const [state, setState] = useState(data);
   const [search, setSearch] = useState("");
-  const { resources } = state;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setSearch(e.target.value);
+
+  const { resources } = state;
 
   const filteredResources = resources.filter(({ name }) =>
     name.toLocaleLowerCase().includes(search.toLowerCase())
