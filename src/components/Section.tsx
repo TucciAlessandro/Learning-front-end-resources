@@ -1,5 +1,17 @@
 import React, { ReactNode } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeIn = keyframes`
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+`;
 
 const StyledSection = styled.div`
   height: 100%;
@@ -7,6 +19,7 @@ const StyledSection = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 0;
+  animation: ${fadeIn} 0.5s ease-in;
 `;
 
 interface Props {

@@ -1,5 +1,3 @@
-import { uuidv4 } from "../util/uuid";
-
 export interface Resource {
   id: string;
   name: string;
@@ -22,14 +20,14 @@ export interface Data {
 
 const availableTags: Tag[] = [
   {
-    id: uuidv4(),
+    id: "e8dacacd-7fa8-4c9f-bb18-08d928e257fd",
     name: "Google",
   },
 ];
 
 const seedResources: Resource[] = [
   {
-    id: uuidv4(),
+    id: "716a27e5-e1b0-4954-9fe5-5d7fba21815f",
     name: "Google Coding Interview With A High School Student",
     type: "video",
     resourceUrl: "https://www.youtube.com/embed/qz9tKlF431k",
@@ -39,7 +37,7 @@ const seedResources: Resource[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
-    id: uuidv4(),
+    id: "a0d0bdfe-e6d8-41b5-a856-7de8e2d60291",
     name: "Coding Interviews are Broken",
     type: "video",
     resourceUrl: "https://www.youtube.com/embed/bx3--22D4E4",
