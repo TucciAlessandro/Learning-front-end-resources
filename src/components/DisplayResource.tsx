@@ -1,6 +1,7 @@
 import React from "react";
 import { Resource } from "../Data/Seeddata";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
 const StyledResource = styled.div`
   display: flex;
@@ -10,7 +11,6 @@ const StyledResource = styled.div`
   height: 40rem;
   margin: 0 3rem;
 `;
-
 const Row = styled.div`
   display: flex;
   flex-direction: row;
@@ -19,7 +19,6 @@ const Row = styled.div`
   margin-top: 2rem;
   width: 100%;
 `;
-
 const ButtonRow = styled.div`
   display: flex;
   flex-direction: row;
@@ -29,7 +28,6 @@ const ButtonRow = styled.div`
   align-self: flex-end;
   margin-top: 1.5rem;
 `;
-
 const Hr = styled.hr`
   width: 95%;
   border: 0;
@@ -49,7 +47,6 @@ const Header = styled.h1`
   margin-block-start: 0;
   color: white;
 `;
-
 const Iframe = styled.iframe`
   border: 1px solid black;
   height: 100%;
@@ -57,27 +54,22 @@ const Iframe = styled.iframe`
   width: 40%;
   /* margin-top: 3rem; */
 `;
-
 const Button = styled.button`
   background-color: #2c3e50;
-
   color: white;
   border-radius: 6px;
   border: 1px solid #2c3e50;
   font-size: 16px;
   padding: 15px 30px;
   text-decoration: none;
-
   &:focus {
     outline: none;
     border: 1px solid white;
   }
-
   &:hover {
     border: 1px solid white;
     transform: translateY(-0.5rem);
   }
-
   transition: all 0.3s ease-in-out;
 `;
 
@@ -86,8 +78,15 @@ interface Props {
 }
 
 function DisplayResource({
-  resource: { resourceUrl, name, description },
+  resource: { name, resourceUrl, description, id },
 }: Props) {
+  let history = useHistory();
+
+  const handleClick = () => {
+    // history.push(`/resource/${id}`);
+    console.log(name, resourceUrl, description, id);
+  };
+  console.log(resourceUrl);
   return (
     <StyledResource>
       <Header>{name}</Header>
@@ -102,8 +101,8 @@ function DisplayResource({
       </Row>
       <ButtonRow>
         <Button>Do you like me?</Button>
-        <Button>Do you like me?</Button>
-        <Button>Do you like me?</Button>
+        <Button onClick={handleClick}>Want to see more?</Button>
+        <Button>Leave a comment!</Button>
       </ButtonRow>
     </StyledResource>
   );
