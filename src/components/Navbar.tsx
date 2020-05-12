@@ -1,10 +1,30 @@
 import React, { ReactNode } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
-const StyledNavbar = styled.nav`
+const NavbarAnimation = keyframes`
+from {
+  top: -20px;
+}
+to{
+  top: 0px;
+}`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  border-bottom: 2px solid #fafafa;
+`;
+const Wrapper = styled.div`
+  position: fixed;
   width: 100%;
   height: 5%;
+  animation: ${NavbarAnimation} 1s ease-in-out;
+`;
+
+const StyledNavbar = styled.nav`
+  position: static;
+  width: 100%;
+  height: 100%;
   background-color: #2c3e50;
   display: flex;
   align-items: center;
@@ -36,17 +56,17 @@ interface Props {
 
 function Navbar({ children }: Props) {
   return (
-    <>
+    <Wrapper>
       <StyledNavbar>
         <Row>
-          <Link to="/">
+          <StyledLink to="/">
             <StyledLogo>UTILITIESPICKER</StyledLogo>
-          </Link>
+          </StyledLink>
           {children}
         </Row>
       </StyledNavbar>
       <Hr />
-    </>
+    </Wrapper>
   );
 }
 

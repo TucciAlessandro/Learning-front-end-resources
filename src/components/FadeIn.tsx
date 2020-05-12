@@ -19,16 +19,14 @@ const getAnimation = (distance: number | string, direction?: Direction) => {
         return "";
     }
   };
-
   return keyframes`
-    0% {
+    from {
         opacity:0;
         transform: ${getTranslate(distance, direction)}}
-    100% {
+    to {
         opacity:1;
         transform: translateX(0)}
-    }
-    `;
+    }`;
 };
 
 interface FadeProps {
