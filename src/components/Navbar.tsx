@@ -12,13 +12,12 @@ to{
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  border-bottom: 2px solid #fafafa;
 `;
 const Wrapper = styled.div`
   position: fixed;
   width: 100%;
   height: 5%;
-  animation: ${NavbarAnimation} 1s ease-in-out;
+  animation: ${NavbarAnimation} 0.5s ease-in-out;
 `;
 
 const StyledNavbar = styled.nav`

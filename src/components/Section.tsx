@@ -19,7 +19,7 @@ const StyledSection = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 0;
-  animation: ${fadeIn} 0.5s ease-in;
+  animation: ${fadeIn} 0.2s ease-in;
 `;
 
 interface Props {

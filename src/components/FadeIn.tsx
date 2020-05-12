@@ -36,8 +36,8 @@ interface FadeProps {
   delay?: number;
 }
 const Fade = styled.div<FadeProps>`
-  animation: ${(props) => getAnimation(props.distance, props.direction)} 3s
-    ease-in-out;
+  animation: ${(props) => getAnimation(props.distance, props.direction)}
+    ${(props) => `${props.duration}s`} ease-in-out;
 `;
 
 interface Props {

@@ -5,6 +5,7 @@ import Resource from "./screens/Resource";
 import styled from "styled-components";
 
 const AppContainer = styled.div`
+  position: relative;
   height: 100vh;
   width: 100%;
   background: #2c3e50; /* fallback for old browsers */

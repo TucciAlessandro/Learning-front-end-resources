@@ -2,6 +2,7 @@ import React from "react";
 import { Resource } from "../Data/Seeddata";
 import styled from "styled-components";
 import Navbar from "./Navbar";
+import FadeIn from "./FadeIn";
 
 const StyledSingleResource = styled.div`
   display: flex;
@@ -56,7 +57,9 @@ function DisplaySingleResource({ resource }: Props) {
   return (
     <>
       <Navbar>
-        <Header>{resource.name}</Header>
+        <FadeIn direction="right" duration={2} delay={1} distance={150}>
+          <Header>{resource.name}</Header>
+        </FadeIn>
       </Navbar>
       <StyledSingleResource>
         <Row>

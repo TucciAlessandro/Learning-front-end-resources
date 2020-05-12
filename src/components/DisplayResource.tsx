@@ -9,7 +9,7 @@ const StyledResource = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 40rem;
+  height: 45rem;
   margin: 0 3rem;
 `;
 const Row = styled.div`
@@ -93,7 +93,7 @@ function DisplayResource({ resource }: Props) {
   };
   return (
     <StyledResource>
-      <FadeIn direction="right" duration={8000} delay={1} distance={200}>
+      <FadeIn direction="right" duration={3} delay={1} distance={200}>
         <Header>{resource.name}</Header>
       </FadeIn>
       <Hr />
