@@ -3,35 +3,39 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Homepage from "./screens/Homepage";
 import Resource from "./screens/Resource";
 import styled from "styled-components";
+import { MyThemeContextsProvider } from "./context/ThemeContexts";
 
 const AppContainer = styled.div`
   position: relative;
   height: 100vh;
   width: 100%;
-  background: #2c3e50; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #4ca1af,
-    #2c3e50
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #4ca1af,
-    #2c3e50
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  ${(props) => props.theme.gradient}
+/* 
+  &::-webkit-scrollbar {
+  width: 20px;
+}
+&::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+  z-index: 10;
+} */
 
   overflow: auto;
 `;
 
+
+
 function App() {
   return (
     <BrowserRouter>
-      <AppContainer>
-        <Switch>
-          <Route exact path="/" component={Homepage} />
-          <Route exact path="/resource/:id" component={Resource} />
-        </Switch>
-      </AppContainer>
+      <MyThemeContextsProvider>
+        <AppContainer>
+          <Switch>
+            <Route exact path="/" component={Homepage} />
+            <Route exact path="/resource/:id" component={Resource} />
+          </Switch>
+        </AppContainer>
+      </MyThemeContextsProvider>
     </BrowserRouter>
   );
 }

@@ -53,7 +53,7 @@ interface Props {
   resource: Resource;
 }
 
-function DisplaySingleResource({ resource }: Props) {
+function DisplaySingleVideo({ resource }: Props) {
   return (
     <>
       <Navbar>
@@ -80,4 +80,4 @@ function DisplaySingleResource({ resource }: Props) {
   );
 }
 
-export default DisplaySingleResource;
+export default DisplaySingleVideo;

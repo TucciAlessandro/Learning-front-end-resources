@@ -13,23 +13,25 @@ to{
 const StyledLink = styled(Link)`
   text-decoration: none;
 `;
-const Wrapper = styled.div`
+// const Wrapper = styled.div`
+//   position: fixed;
+//   width: 100%;
+//   height: 5%;
+//   animation: ${NavbarAnimation} 0.5s ease-in-out;
+// `;
+
+const StyledNavbar = styled.nav`
   position: fixed;
   width: 100%;
   height: 5%;
-  animation: ${NavbarAnimation} 0.5s ease-in-out;
-`;
-
-const StyledNavbar = styled.nav`
-  position: static;
-  width: 100%;
-  height: 100%;
   background-color: #2c3e50;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-evenly;
 `;
 const Hr = styled.hr`
+  position: fixed;
+  top: 5%;
   width: 100%;
   border: 0;
   height: 0;
@@ -55,7 +57,7 @@ interface Props {
 
 function Navbar({ children }: Props) {
   return (
-    <Wrapper>
+    <>
       <StyledNavbar>
         <Row>
           <StyledLink to="/">
@@ -65,7 +67,7 @@ function Navbar({ children }: Props) {
         </Row>
       </StyledNavbar>
       <Hr />
-    </Wrapper>
+    </>
   );
 }
 
