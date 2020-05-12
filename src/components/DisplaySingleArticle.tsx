@@ -24,9 +24,9 @@ const Header = styled.h1`
 
 const Iframe = styled.iframe`
   border: 1px solid black;
-  height: 120%;
+  height: 100%;
   /* min-height: 30rem; */
-  width: 60%;
+  width: 80%;
 `;
 
 const Paragraph = styled.p`
@@ -42,7 +42,7 @@ const Row = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  height: 100%;
+  height: 45rem;
 `;
 
 const Button = styled.button`
@@ -101,10 +101,10 @@ function DisplaySingleArticle({ resource }: Props) {
         </ButtonRow>
         <Row>
           <Iframe src={resource.resourceUrl}></Iframe>
+        </Row>
           <Suggestions>
             THERE GOES THE SUGGESTIONS OR CODEPEN SECTIONS!
           </Suggestions>
-        </Row>
         <Suggestions>COMMENTS GO HERE!</Suggestions>
       </StyledSingleResource>
     </>
