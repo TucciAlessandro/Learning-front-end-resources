@@ -7,6 +7,7 @@ import styled from "styled-components";
 import Input from "../components/Input";
 import Navbar from "../components/Navbar";
 import { useMyThemeContext } from "../context/ThemeContexts";
+import { faAmbulance } from "@fortawesome/free-solid-svg-icons";
 
 const Col = styled.div`
   width: 100%;
@@ -49,7 +50,7 @@ function Homepage() {
   return (
     <Section>
       <Navbar>
-        <Input value={search} handleChange={handleChange} />
+        <Input value={search} handleChange={handleChange} icon={'search'}/>
         <Button onClick={toggleTheme}>Swap Theme</Button>
       </Navbar>
       <Col>
