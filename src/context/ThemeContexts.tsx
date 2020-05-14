@@ -26,6 +26,12 @@ const darkTheme = {
   },
 };
 
+// const theme = {
+//   primaryColor: 'asd',
+//   secondaryColor:' adsds',
+//   accentColor: 'asdads'
+// }
+
 const lightTheme = {
   type: "light",
   gradient: gradientLight,

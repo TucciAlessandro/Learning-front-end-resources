@@ -2,48 +2,24 @@ import React, { ReactNode, ButtonHTMLAttributes } from "react";
 import styled from "styled-components";
 
 interface ButtonProps {
-  size?: string;
+  size?: ButtonSize;
   color: Variant;
   children: ReactNode;
 }
 
 type Variant = "primary" | "secondary" | "danger";
+type ButtonSize = "small" | "medium" | "large";
 
-// const buttonSizes: any = {
-//   sm: "5px 10px",
-//   md: "10px 20px",
-//   lg: "15px 30px",
-// };
-
-const getBackground = (variant: Variant, props: any) => {
-  const getVariant = (variant: Variant) => {
-    switch (variant) {
-      case "primary":
-        return props.theme.buttonVariant[variant];
-
-      case "secondary":
-        return props.theme.buttonVariant[variant];
-
-      case "danger":
-        return props.theme.buttonVariant[variant];
-
-      default:
-        return "";
-    }
-  };
-  return getVariant(variant);
+const buttonSizes: any = {
+  small: "5px 10px",
+  medium: "10px 20px",
+  large: "15px 30px",
 };
 
-const getSize = (size: string | undefined = "medium") => {
-  switch (size) {
-    case "small":
-      return `5px 10px`;
-    case "medium":
-      return `10px 20px`;
-    case "large":
-      return `15px 30px`;
-  }
-};
+const getBackground = (variant: Variant, props: any) =>
+  props.theme.buttonVariant[variant];
+
+const getSize = (size: ButtonSize = "medium") => buttonSizes[size];
 
 const StyledButton = styled.button<ButtonProps>`
   background-color: ${(props) => getBackground(props.color, props)};

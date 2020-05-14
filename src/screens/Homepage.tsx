@@ -50,7 +50,7 @@ function Homepage() {
   return (
     <Section>
       <Navbar>
-        <Input value={search} handleChange={handleChange} icon={faSearch}/>
+        <Input value={search} handleChange={handleChange} leftIcon={faSearch} onLeftIconClick={() => console.log('ciao from outside')} />
         <Button onClick={toggleTheme}>Swap Theme</Button>
       </Navbar>
       <Col>
