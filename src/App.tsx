@@ -10,7 +10,7 @@ const AppContainer = styled.div`
   height: 100vh;
   width: 100%;
   ${(props) => props.theme.gradient}
-/* 
+  /* 
   &::-webkit-scrollbar {
   width: 20px;
 }
@@ -22,8 +22,6 @@ const AppContainer = styled.div`
 
   overflow: auto;
 `;
-
-
 
 function App() {
   return (

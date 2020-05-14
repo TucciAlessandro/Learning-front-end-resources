@@ -3,6 +3,7 @@ import { Resource } from "../Data/Seeddata";
 import styled from "styled-components";
 import { useHistory, Link } from "react-router-dom";
 import FadeIn from "./FadeIn";
+import Button from "./Button";
 
 const StyledResource = styled.div`
   display: flex;
@@ -60,7 +61,7 @@ const Thumbnail = styled.img`
   height: 100%;
   width: 100%;
 `;
-const Button = styled.button`
+const Buttons = styled.button`
   background-color: #2c3e50;
   color: white;
   border-radius: 6px;
@@ -104,9 +105,10 @@ function DisplayResource({ resource }: Props) {
         <Paragraph>{resource.description}</Paragraph>
       </Row>
       <ButtonRow>
-        <Button>Do you like me?</Button>
-        <Button onClick={handleClick}>Want to see more?</Button>
-        <Button>Leave a comment!</Button>
+        <Button color="primary" >asd</Button>
+        <Buttons>Do you like me?</Buttons>
+        <Buttons onClick={handleClick}>Want to see more?</Buttons>
+        <Buttons>Leave a comment!</Buttons>
       </ButtonRow>
     </StyledResource>
   );
