@@ -45,7 +45,7 @@ interface Props {
   value: string;
 }
 
-function Input({ value, handleChange}: Props) {
+function Input({ value, handleChange }: Props) {
   return (
     <InputContainer>
       <SearchIcon icon={faSearch} />
