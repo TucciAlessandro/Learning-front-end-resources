@@ -19,11 +19,21 @@ const gradientLight = css`
 const darkTheme = {
   type: "dark",
   gradient: gradientDark,
+  buttonVariant: {
+    primary: "#2d9a4f",
+    secondary: "#0068ad",
+    danger: " #990000",
+  },
 };
 
 const lightTheme = {
   type: "light",
   gradient: gradientLight,
+  buttonVariant: {
+    primary: " #89e49b",
+    secondary: "#4cb2f5",
+    danger: "#f34f28",
+  },
 };
 
 const DEFAULT_CONTEXT_VALUE = {
@@ -43,7 +53,9 @@ export const MyThemeContextsProvider = ({
 }: ThemeContextProviderProps) => {
   const [theme, setTheme] = useState(lightTheme);
   const toggleTheme = () =>
-    setTheme((oldTheme) => (oldTheme.type === "light" ? darkTheme : lightTheme));
+    setTheme((oldTheme) =>
+      oldTheme.type === "light" ? darkTheme : lightTheme
+    );
 
   return (
     <MyThemeContext.Provider value={{ toggleTheme }}>

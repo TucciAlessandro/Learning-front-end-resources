@@ -36,7 +36,7 @@ const Button = styled.button`
 function Homepage() {
   const [state, setState] = useState(data);
   const [search, setSearch] = useState("");
-  const {toggleTheme} = useMyThemeContext()
+  const { toggleTheme } = useMyThemeContext();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setSearch(e.target.value);
 

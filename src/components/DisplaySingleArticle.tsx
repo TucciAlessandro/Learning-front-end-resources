@@ -102,9 +102,9 @@ function DisplaySingleArticle({ resource }: Props) {
         <Row>
           <Iframe src={resource.resourceUrl}></Iframe>
         </Row>
-          <Suggestions>
-            THERE GOES THE SUGGESTIONS OR CODEPEN SECTIONS!
-          </Suggestions>
+        <Suggestions>
+          THERE GOES THE SUGGESTIONS OR CODEPEN SECTIONS!
+        </Suggestions>
         <Suggestions>COMMENTS GO HERE!</Suggestions>
       </StyledSingleResource>
     </>
