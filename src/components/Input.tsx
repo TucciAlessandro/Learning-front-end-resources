@@ -1,12 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSearch,
-  faAmbulance,
-  faAddressBook,
-} from "@fortawesome/free-solid-svg-icons";
-import { IconProp, IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 const StyledInput = styled.input`
   /* margin: 2rem; */
@@ -45,29 +40,31 @@ const Icon = styled(FontAwesomeIcon)`
   /* border-bottom: 2px solid #fafafa; */
 `;
 
+type IconType = "search" | "ambulance";
+
 interface Props {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
-  icon?: string;
+  icon?: IconDefinition;
 }
 
 function Input({ value, handleChange, icon }: Props) {
-  const getIcon = (icon: string | undefined) => {
-    switch (icon) {
-      case "search":
-        return faSearch;
-      case "ambulance":
-        return faAmbulance;
-      case "address":
-        return faAddressBook;
-      default:
-        return null;
-    }
-  };
-  const iconToShow = getIcon(icon)
+  // const getIcon = (icon: IconType) => {
+  //   switch (icon) {
+  //     case "search":
+  //       return faSearch;
+  //     // case "ambulance":
+  //     //   return faAmbulance;
+  //     // case "address":
+  //     //   return faAddressBook;
+  //     default:
+  //       return null;
+  //   }
+  // };
+  // const iconToShow = getIcon(icon);
   return (
     <InputContainer>
-      {iconToShow && <Icon icon={iconToShow} />}
+      {icon && <Icon icon={icon} />}
       <StyledInput
         value={value}
         onChange={handleChange}
