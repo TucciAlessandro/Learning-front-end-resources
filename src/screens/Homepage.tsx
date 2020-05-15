@@ -63,11 +63,8 @@ function Homepage() {
 
   return (
     <Section>
-      {screenSize >= 1200 ? (
+      {screenSize >= 1200 && (
         <Navbar>
-          <Button size={"small"} color={"secondary"} onClick={showSideNavbar}>
-            SideNavbar!
-          </Button>
           <Input
             value={search}
             handleChange={handleChange}
@@ -76,11 +73,13 @@ function Homepage() {
           />
           <Buttons onClick={toggleTheme}>Swap Theme</Buttons>
         </Navbar>
-      ) : (
-        <SideNavBar showing={showingSide}>
-          <StyledLink to="/">HOMEPAGE</StyledLink>
-        </SideNavBar>
       )}
+      <Button size={"small"} color={"secondary"} onClick={showSideNavbar}>
+        SideNavbar!
+      </Button>
+      <SideNavBar showing={showingSide}>
+        <StyledLink to="/">HOMEPAGE</StyledLink>
+      </SideNavBar>
       <Col>
         {filteredResources.map((resource) => (
           <DisplayResource resource={resource} />
