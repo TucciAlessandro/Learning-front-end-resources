@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useHistory, Link } from "react-router-dom";
 import FadeIn from "./FadeIn";
 import Button from "./Button";
+import Paragraph from "./Paragraph";
 
 const StyledResource = styled.div`
   display: flex;
@@ -42,11 +43,7 @@ const Hr = styled.hr`
   height: 0;
   border-top: 2px solid #2c3e50;
 `;
-const Paragraph = styled.p`
-  width: 40%;
-  color: white;
-  font-family: "Manrope", sans-serif;
-`;
+
 
 const Header = styled.h1`
   font-family: "Manrope", sans-serif;
@@ -54,7 +51,6 @@ const Header = styled.h1`
   margin-block-end: 0;
   margin-block-start: 0;
   color: white;
-  /* margin-top: 2rem; */
 `;
 const Thumbnail = styled.img`
   border: 1px solid black;
@@ -105,7 +101,7 @@ function DisplayResource({ resource }: Props) {
         <Paragraph>{resource.description}</Paragraph>
       </Row>
       <ButtonRow>
-        <Button color="primary" >asd</Button>
+        <Button color="primary">asd</Button>
         <Buttons>Do you like me?</Buttons>
         <Buttons onClick={handleClick}>Want to see more?</Buttons>
         <Buttons>Leave a comment!</Buttons>

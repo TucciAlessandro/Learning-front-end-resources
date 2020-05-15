@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Navbar from "./Navbar";
 import FadeIn from "./FadeIn";
 import { Redirect } from "react-router-dom";
+import Paragraph from "./Paragraph";
 
 const StyledSingleResource = styled.div`
   display: flex;
@@ -29,7 +30,7 @@ const Iframe = styled.iframe`
   width: 80%;
 `;
 
-const Paragraph = styled.p`
+const StyledParagraph = styled(Paragraph)`
   width: 80%;
   margin-bottom: 2rem;
   color: white;
@@ -95,7 +96,7 @@ function DisplaySingleArticle({ resource }: Props) {
         </FadeIn>
       </Navbar>
       <StyledSingleResource>
-        <Paragraph>{resource.description}</Paragraph>
+        <StyledParagraph >{resource.description}</StyledParagraph>
         <ButtonRow>
           <Button onClick={handleClick}>Let's go to the source!</Button>
         </ButtonRow>
