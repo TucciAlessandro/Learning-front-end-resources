@@ -5,7 +5,7 @@ const StyledSideNavBar = styled.nav<SideNavBarProps>`
 position: fixed;
   width: 10%;
   height: 100%;
-  background-color: #fafafa;
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
