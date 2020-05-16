@@ -6,11 +6,12 @@ interface DataContextProviderProps {
 }
 
 const DEFAULT_CONTEXT_VALUE = {
-  getData: () => console.log("not in the context"),
+  getResource: (id: string) =>
+    data.resources.find((resource) => resource.id === id),
+  getAllResources: () => data.resources,
 };
 
 interface DataContextValue {
-  getData: () => void;
   getResource: (id: string) => Resource;
   getAllResources: () => Resource[];
 }
@@ -29,8 +30,12 @@ export const MyDataContextProvider = ({
   const getAllResources = () => data.resources;
 
   return (
-    <MyDataContext.Provider value={{ getResource, getAllResources }}>
-      {children}
-    </MyDataContext.Provider>
+    <>
+      {data && (
+        <MyDataContext.Provider value={{ getResource, getAllResources }}>
+          {children}
+        </MyDataContext.Provider>
+      )}
+    </>
   );
 };
