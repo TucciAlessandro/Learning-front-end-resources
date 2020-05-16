@@ -6,11 +6,11 @@ interface DataContextProviderProps {
 }
 
 const DEFAULT_CONTEXT_VALUE = {
-  getResource: () => console.log("not in the context"),
-  getAllResources: () => console.log("not in the context"),
+  getData: () => console.log("not in the context"),
 };
 
 interface DataContextValue {
+  getData: () => void;
   getResource: (id: string) => Resource;
   getAllResources: () => Resource[];
 }
@@ -23,12 +23,11 @@ export const MyDataContextProvider = ({
   children,
 }: DataContextProviderProps) => {
   const [state, setState] = useState(data);
-  const getResource = () => {
-    console.log("getting data");
+  const getResource = (id: string) => {
+    data.resources.find((resource) => resource.id === id);
   };
-  const getAllResources = () => {
-    console.log("getting data");
-  };
+  const getAllResources = () => data.resources;
+
   return (
     <MyDataContext.Provider value={{ getResource, getAllResources }}>
       {children}
