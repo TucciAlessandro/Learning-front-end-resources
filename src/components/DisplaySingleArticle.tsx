@@ -3,7 +3,7 @@ import { Resource } from "../Data/Seeddata";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import FadeIn from "./FadeIn";
-import { Redirect } from "react-router-dom";
+
 
 const StyledSingleResource = styled.div`
   display: flex;
