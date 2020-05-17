@@ -44,7 +44,6 @@ const Hr = styled.hr`
   border-top: 2px solid #2c3e50;
 `;
 
-
 const Header = styled.h1`
   font-family: "Manrope", sans-serif;
   letter-spacing: 2px;
@@ -101,10 +100,15 @@ function DisplayResource({ resource }: Props) {
         <Paragraph>{resource.description}</Paragraph>
       </Row>
       <ButtonRow>
-        <Button color="primary">asd</Button>
-        <Buttons>Do you like me?</Buttons>
-        <Buttons onClick={handleClick}>Want to see more?</Buttons>
-        <Buttons>Leave a comment!</Buttons>
+        <Button size="large" color="primary">
+          Do you like me?
+        </Button>
+        <Button size="large" color="primary" onClick={handleClick}>
+          Want to see more?
+        </Button>
+        <Button size="large" color="primary">
+          Leave a comment!
+        </Button>
       </ButtonRow>
     </StyledResource>
   );

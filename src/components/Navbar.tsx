@@ -2,23 +2,9 @@ import React, { ReactNode } from "react";
 import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
-const NavbarAnimation = keyframes`
-from {
-  top: -20px;
-}
-to{
-  top: 0px;
-}`;
-
 const StyledLink = styled(Link)`
   text-decoration: none;
 `;
-// const Wrapper = styled.div`
-//   position: fixed;
-//   width: 100%;
-//   height: 5%;
-//   animation: ${NavbarAnimation} 0.5s ease-in-out;
-// `;
 
 const StyledNavbar = styled.nav`
   position: fixed;
@@ -70,5 +56,4 @@ function Navbar({ children }: Props) {
     </>
   );
 }
-
 export default Navbar;
