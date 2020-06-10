@@ -3,7 +3,8 @@ import { Resource } from "../Data/Seeddata";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import FadeIn from "./FadeIn";
-import { Redirect } from "react-router-dom";
+import Button from "./Button";
+
 import Paragraph from "./Paragraph";
 
 const StyledSingleResource = styled.div`
@@ -26,7 +27,7 @@ const Header = styled.h1`
 const Iframe = styled.iframe`
   border: 1px solid black;
   height: 100%;
-  /* min-height: 30rem; */
+
   width: 80%;
 `;
 
@@ -46,24 +47,25 @@ const Row = styled.div`
   height: 45rem;
 `;
 
-const Button = styled.button`
-  background-color: white;
-  color: #2c3e50;
-  border-radius: 6px;
-  border: 1px solid #2c3e50;
-  font-size: 16px;
-  padding: 15px 30px;
-  text-decoration: none;
-  &:focus {
-    outline: none;
-    border: 1px solid white;
-  }
-  &:hover {
-    border: 1px solid white;
-    transform: translateY(-0.5rem);
-  }
-  transition: all 0.3s ease-in-out;
-`;
+// const Button = styled.button`
+//   background-color: white;
+//   color: #2c3e50;
+//   border-radius: 6px;
+//   border: 1px solid #2c3e50;
+
+//   font-size: 16px;
+//   padding: 15px 30px;
+//   text-decoration: none;
+//   &:focus {
+//     outline: none;
+//     border: 1px solid white;
+//   }
+//   &:hover {
+//     border: 1px solid white;
+//     transform: translateY(-0.5rem);
+//   }
+//   transition: all 0.3s ease-in-out;
+// `;
 
 const ButtonRow = styled.div`
   display: flex;
@@ -96,9 +98,9 @@ function DisplaySingleArticle({ resource }: Props) {
         </FadeIn>
       </Navbar>
       <StyledSingleResource>
-        <StyledParagraph >{resource.description}</StyledParagraph>
+        <StyledParagraph>{resource.description}</StyledParagraph>
         <ButtonRow>
-          <Button onClick={handleClick}>Let's go to the source!</Button>
+          <Button size='small' color='primary'onClick={handleClick}>Let's go to the source!</Button>
         </ButtonRow>
         <Row>
           <Iframe src={resource.resourceUrl}></Iframe>

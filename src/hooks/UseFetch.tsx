@@ -40,6 +40,7 @@ const useFetch = (url: string) => {
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
 
   useEffect(() => {
+    console.log('start fetch')
     const doFetch = async () => {
       try {
         dispatch({ type: "REQUEST_START" });

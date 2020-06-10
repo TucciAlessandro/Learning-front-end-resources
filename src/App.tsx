@@ -4,6 +4,8 @@ import Homepage from "./screens/Homepage";
 import Resource from "./screens/Resource";
 import styled from "styled-components";
 import { MyThemeContextsProvider } from "./context/ThemeContexts";
+import { MyDataContextProvider, useDataContext } from "./context/DataContext";
+import { Form } from "./screens/Form";
 
 const AppContainer = styled.div`
   position: relative;
@@ -23,17 +25,33 @@ const AppContainer = styled.div`
   overflow: auto;
 `;
 
+function AppContent() {
+  const { loading } = useDataContext();
+  return (
+    <>
+      {!loading ? (
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/resource/:id" component={Resource} />
+          <Route exact path='/post'  component={Form} />
+        </Switch>
+      ) : (
+        <div>loading!</div>
+      )}
+    </>
+  );
+}
+
 function App() {
   return (
     <BrowserRouter>
-      <MyThemeContextsProvider>
-        <AppContainer>
-          <Switch>
-            <Route exact path="/" component={Homepage} />
-            <Route exact path="/resource/:id" component={Resource} />
-          </Switch>
-        </AppContainer>
-      </MyThemeContextsProvider>
+      <MyDataContextProvider>
+        <MyThemeContextsProvider>
+          <AppContainer>
+            <AppContent />
+          </AppContainer>
+        </MyThemeContextsProvider>
+      </MyDataContextProvider>
     </BrowserRouter>
   );
 }

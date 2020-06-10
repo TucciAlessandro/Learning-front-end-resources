@@ -7,10 +7,12 @@ import useEventListener from "../hooks/useEventListener";
 import Input from "../components/Input";
 import Navbar from "../components/Navbar";
 import { useMyThemeContext } from "../context/ThemeContexts";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faIcons, faBars } from "@fortawesome/free-solid-svg-icons";
 import SideNavBar from "../components/SideNavBar";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useDataContext } from "../context/DataContext";
 
 const Col = styled.div`
   width: 100%;
@@ -18,48 +20,33 @@ const Col = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
 `;
-const Buttons = styled.button`
-  background-color: #2c3e50;
-  color: white;
-  border-radius: 6px;
-  border: 1px solid #2c3e50;
-  font-size: 16px;
-  text-decoration: none;
-  &:focus {
-    outline: none;
-    border: 1px solid white;
-  }
-  &:hover {
-    border: 1px solid white;
-    transform: translateY(-0.3rem);
-  }
-  transition: all 0.3s ease-in-out;
-`;
 
 const StyledLink = styled(Link)`
   display: flex;
   text-decoration: none;
-  color: white;
+  outline: none;
+  color: black;
   border-bottom: 1px solid white;
 `;
 
 function Homepage() {
-  const [state, setState] = useState(data);
   const [search, setSearch] = useState("");
   const { toggleTheme } = useMyThemeContext();
-  const [showingSide, setShowingSide] = useState(true);
+  const [showingSide, setShowingSide] = useState(false);
   const [screenSize, setScreenSize] = useState(window.innerWidth);
+  const { getAllResources } = useDataContext();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setSearch(e.target.value);
 
   useEventListener("resize", () => setScreenSize(window.innerWidth));
 
-  const showSideNavbar = () => setShowingSide(!showingSide);
-  const { resources } = state;
+  const toggleSideNavbar = () => setShowingSide(!showingSide);
 
-  const filteredResources = resources.filter(({ name }) =>
-    name.toLocaleLowerCase().includes(search.toLowerCase())
-  );
+  const filteredResources = getAllResources();
+  console.log(filteredResources);
+  // const filteredResources = allResources.filter(({ name }) =>
+  //   name.toLowerCase().includes(search.toLowerCase())
+  // );
 
   return (
     <Section>
@@ -71,15 +58,22 @@ function Homepage() {
             leftIcon={faSearch}
             onLeftIconClick={() => console.log("ciao from outside")}
           />
-          <Buttons onClick={toggleTheme}>Swap Theme</Buttons>
+          <Button size={"medium"} color={"danger"} onClick={toggleTheme}>
+            Swap Theme
+          </Button>
         </Navbar>
       )}
-      <Button size={"small"} color={"secondary"} onClick={showSideNavbar}>
-        SideNavbar!
-      </Button>
-      <SideNavBar showing={showingSide}>
-        <StyledLink to="/">HOMEPAGE</StyledLink>
-      </SideNavBar>
+      <div>
+        <Button size={"large"} color={"danger"} onClick={toggleSideNavbar}>
+          <FontAwesomeIcon icon={faBars} />
+        </Button>
+      </div>
+      {showingSide && (
+        <SideNavBar showing={showingSide} onClose={toggleSideNavbar}>
+          <StyledLink to="/">HOMEPAGE</StyledLink>
+          <StyledLink to="/resources">RESOURCES</StyledLink>
+        </SideNavBar>
+      )}
       <Col>
         {filteredResources.map((resource) => (
           <DisplayResource resource={resource} />

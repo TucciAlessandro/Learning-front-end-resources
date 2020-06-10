@@ -27,6 +27,7 @@ const StyledButton = styled.button<ButtonProps>`
   border-radius: 6px;
   border: 1px solid #2c3e50;
   font-size: 16px;
+  cursor: pointer;
   padding: ${(props) => getSize(props.size)};
   text-decoration: none;
   &:focus {
